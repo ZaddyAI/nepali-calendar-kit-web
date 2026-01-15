@@ -151,22 +151,6 @@ formatBs({ year: 2082, month: 10, day: 1 }, "DD-MM-YYYY", "long", "numeric");
 // "१-१०-२०८२"
 ```
 
----
-
-## Screenshots
-
-**Date Picker Opened**
-
-![NepaliDatePicker Demo](https://user-images.githubusercontent.com/your-username/demo-screenshot.png)
-
-**Selected Date Displayed in Nepali**
-
-```
-Selected Date: { year: 2082, month: 10, day: 1 }
-```
-
----
-
 ## License
 
 MIT © [Gambhir Poudel](https://github.com/gambhirpoudel)
