@@ -29,7 +29,7 @@ npm install @gambhirpoudel/nepali-calendar-kit
 
 Try the **Nepali Date Picker** and conversion functions directly in your browser:
 
-[<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google-chrome.svg" alt="Google Chrome" height="20" />](https://nepali-calander-kit.vercel.app)
+[<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google-chrome.svg" alt="Google Chrome" height="20" />](https://nepalicalendarkit.gambhirpoudel.com.np/)
 
 > Click the link to open a live demo with interactive examples.
 
