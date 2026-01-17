@@ -56,7 +56,7 @@ export const MyComponent = () => {
             </div>
 
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
-                <h3 className="font-bold text-primary mb-2">Interactive Component Preview</h3>
+                <h3 className="font-bold text-white mb-2">Interactive Component Preview</h3>
                 <div className="text-sm text-muted-foreground">
                     <NepaliDatePicker
                         onChange={(result) => setSelectedDate(result)}
