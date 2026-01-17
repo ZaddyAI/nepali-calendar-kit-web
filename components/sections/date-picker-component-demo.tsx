@@ -1,98 +1,137 @@
-"use client"
-import { NepaliDatePicker } from '@gambhirpoudel/nepali-calendar-kit';
-import React from 'react';
+"use client";
+import React from "react";
+import { NepaliDatePicker } from "@gambhirpoudel/nepali-calendar-kit";
+
 export default function DatePickerComponentDemo() {
     const [selectedDate, setSelectedDate] = React.useState<any | null>(null);
+
+    // State for interactive options
+    const [dateLan, setDateLan] = React.useState<"en" | "np">("en");
+    const [monthLan, setMonthLan] = React.useState<"en" | "np">("en");
+    const [dayLan, setDayLan] = React.useState<"en" | "np">("en");
+    const [yearLan, setYearLan] = React.useState<"en" | "np">("en");
+    const [primaryColor, setPrimaryColor] = React.useState("#2563eb");
+    const [primaryLightColor, setPrimaryLiteColor] = React.useState("#eff6ff")
+    const [inputBg, setInputBg] = React.useState("#ffffff");
+
     return (
-        <section id='nepali-date-picker' className="space-y-8 mt-16 pt-16 border-t border-border">
+        <section
+            id="nepali-date-picker"
+            className="space-y-8 mt-16 pt-16 border-t border-border"
+        >
             <div>
                 <h2 className="text-3xl font-bold mb-2">3. Nepali Date Picker</h2>
-                <p className="text-muted-foreground mb-6">Use the interactive NepaliDatePicker component in your React app.</p>
+                <p className="text-muted-foreground mb-6">
+                    Use the interactive NepaliDatePicker component in your React app.
+                </p>
             </div>
 
-            <div className="bg-card border border-border rounded-lg p-6 overflow-x-auto">
-                <pre className="font-mono text-sm text-foreground">
-                    <code>{`import React from 'react';
-import { NepaliDatePicker } from '@gambhirpoudel/nepali-calendar-kit';
+            {/* Interactive Options */}
+            <div className="bg-card border border-border rounded-lg p-6 flex flex-col md:flex-row gap-6">
+                <div className="space-y-4">
+                    <h3 className="font-bold">Language Options</h3>
+                    {["dateLan", "monthLan", "dayLan", "yearLan"].map((type) => {
+                        const stateMap = {
+                            dateLan,
+                            monthLan,
+                            dayLan,
+                            yearLan,
+                        };
+                        const setterMap = {
+                            dateLan: setDateLan,
+                            monthLan: setMonthLan,
+                            dayLan: setDayLan,
+                            yearLan: setYearLan,
+                        };
+                        return (
+                            <div key={type} className="flex items-center gap-2">
+                                <span className="capitalize w-20">{type.replace("Lan", "")}:</span>
+                                {(["en", "np"] as const).map((lang) => (
+                                    <button
+                                        key={lang}
+                                        className={`px-2 py-1 border rounded ${stateMap[type as keyof typeof stateMap] === lang
+                                            ? "bg-primary text-white"
+                                            : "bg-background text-foreground"
+                                            }`}
+                                        onClick={() => setterMap[type as keyof typeof setterMap](lang)}
+                                    >
+                                        {lang.toUpperCase()}
+                                    </button>
+                                ))}
+                            </div>
+                        );
+                    })}
+                </div>
 
-export const MyComponent = () => {
-  const handleChange = (result: any | null) => {
-    console.log('Selected Date:', result);
-  };
-
-  return (
-    <div style={{ padding: '20px' }}>
-      <h2>Select a Nepali Date</h2>
-      <NepaliDatePicker
-        onChange={handleChange}
-        theme={{
-          primary: '#2563eb',
-          primaryLight: '#eff6ff',
-          radius: '12px',
-          fontFamily: "'Inter', system-ui, sans-serif",
-          shadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)',
-          inputBg: '#ffffff'
-        }}
-        value="2082-10"
-        dateLan="en"
-        monthLan="en"
-        dayLan="en"
-        yearLan="en"
-      />
-    </div>
-  );
-};`}</code>
-                </pre>
+                <div className="space-y-4">
+                    <h3 className="font-bold">Theme Options</h3>
+                    <div className="flex items-center gap-2">
+                        <label>Primary:</label>
+                        <input
+                            type="color"
+                            value={primaryColor}
+                            onChange={(e) => setPrimaryColor(e.target.value)}
+                        />
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <label>Primary Light:</label>
+                        <input
+                            type="color"
+                            value={primaryLightColor}
+                            onChange={(e) => setPrimaryLiteColor(e.target.value)}
+                        />
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <label>Input BG:</label>
+                        <input
+                            type="color"
+                            value={inputBg}
+                            onChange={(e) => setInputBg(e.target.value)}
+                        />
+                    </div>
+                </div>
             </div>
-            <div className="responseformat">
-                <h3 className="font-bold text-foreground mb-2">Response Format</h3>
-                <pre className="bg-slate-950 border border-slate-800 rounded-lg p-4 font-mono text-sm overflow-x-auto">
-                    <code>{`{
-  bs: '2082-10-29', // Selected date in Bikram Sambat format
-  ad: 'Thu Feb 12 2026 05:45:00 GMT+0545 (Nepal Time)', // Corresponding date in Gregorian format
-  nepali: '२०८२-१०-२९' // Selected date in Nepali script
-}`}</code>
-                </pre>
-            </div>
 
+            {/* Live DatePicker Preview */}
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
                 <h3 className="font-bold text-white mb-2">Interactive Component Preview</h3>
                 <div className="text-sm text-muted-foreground">
                     <NepaliDatePicker
                         onChange={(result) => setSelectedDate(result)}
                         theme={{
-                            primary: '#2563eb',
-                            primaryLight: '#eff6ff',
-                            radius: '12px',
+                            primary: primaryColor,
+                            primaryLight: primaryLightColor,
+                            radius: "12px",
                             fontFamily: "'Inter', system-ui, sans-serif",
-                            shadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)',
-                            inputBg: '#ffffff'
+                            shadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                            inputBg,
                         }}
                         value="2082-10"
-                        dateLan="en"
-                        monthLan="en"
-                        dayLan="en"
-                        yearLan="en"
+                        dateLan={dateLan}
+                        monthLan={monthLan}
+                        dayLan={dayLan}
+                        yearLan={yearLan}
                     />
                 </div>
-                <div className="selecteddate">
-                    {selectedDate && (
-                        <div className="mt-4 text-sm text-muted-foreground">
-                            <div>
-                                Selected Date (bs): <span className="font-mono text-primary">{selectedDate.bs}</span>
-                            </div>
-                            <div>
-                                Selected Date (ad): <span className="font-mono text-primary">{selectedDate.ad.toString()}</span>
-                            </div>
-                            <div>
-                                Selected Date (nepali): <span className="font-mono text-primary">{selectedDate.nepali}</span>
-                            </div>
+
+                {/* Selected Date Output */}
+                {selectedDate && (
+                    <div className="mt-4 text-sm text-muted-foreground">
+                        <div>
+                            Selected Date (bs):{" "}
+                            <span className="font-mono text-primary">{selectedDate.bs}</span>
                         </div>
-                    )}
-                </div>
-
-
+                        <div>
+                            Selected Date (ad):{" "}
+                            <span className="font-mono text-primary">{selectedDate.ad.toString()}</span>
+                        </div>
+                        <div>
+                            Selected Date (nepali):{" "}
+                            <span className="font-mono text-primary">{selectedDate.nepali}</span>
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
-    )
+    );
 }
