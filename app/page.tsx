@@ -10,6 +10,7 @@ import SupportedFormats from "@/components/sections/supported-formats"
 import ExampleOutput from "@/components/sections/example-output"
 import Footer from "@/components/footer"
 import GettingStarted from "@/components/sections/get-started"
+import NepaliDateSection from "@/components/sections/nepali-date"
 
 export default function Home() {
     return (
@@ -23,6 +24,7 @@ export default function Home() {
                 <DatePickerComponentDemo />
                 <PropsTable />
                 <ThemeOptions />
+                <NepaliDateSection />
                 <SupportedFormats />
                 <ExampleOutput />
             </main>
