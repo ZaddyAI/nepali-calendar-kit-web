@@ -1,3 +1,5 @@
+import { TableIcon } from "lucide-react"
+
 export default function PropsTable() {
   const props = [
     {
@@ -15,32 +17,51 @@ export default function PropsTable() {
   ]
 
   return (
-    <section className="space-y-8 mt-16 pt-16 border-t border-border">
-      <div>
-        <h2 className="text-3xl font-bold mb-6">Props</h2>
+    <section className="space-y-12">
+      <div className="space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary-foreground text-xs font-bold uppercase tracking-wider border border-border">
+          <TableIcon className="w-3 h-3" />
+          API Reference
+        </div>
+        <h2 className="text-4xl font-extrabold tracking-tight">Component Props</h2>
+        <p className="text-xl text-muted-foreground max-w-2xl">
+          Detailed breakdown of all available configuration options for the NepaliDatePicker.
+        </p>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-border">
-              <th className="text-left py-3 px-4 font-bold text-foreground">Prop</th>
-              <th className="text-left py-3 px-4 font-bold text-foreground">Type</th>
-              <th className="text-left py-3 px-4 font-bold text-foreground">Default</th>
-              <th className="text-left py-3 px-4 font-bold text-foreground">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {props.map((row, idx) => (
-              <tr key={idx} className="border-b border-border/50 hover:bg-secondary/30 transition">
-                <td className="py-3 px-4 font-mono text-primary">{row.prop}</td>
-                <td className="py-3 px-4 font-mono text-xs text-muted-foreground bg-card/50 rounded">{row.type}</td>
-                <td className="py-3 px-4 font-mono text-xs">{row.default}</td>
-                <td className="py-3 px-4 text-muted-foreground">{row.description}</td>
+      <div className="bg-card/40 backdrop-blur-xl border border-border rounded-[2rem] overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-white/5 border-b border-border">
+                <th className="py-5 px-6 text-xs font-bold uppercase tracking-widest text-muted-foreground">Property</th>
+                <th className="py-5 px-6 text-xs font-bold uppercase tracking-widest text-muted-foreground">Type</th>
+                <th className="py-5 px-6 text-xs font-bold uppercase tracking-widest text-muted-foreground">Default</th>
+                <th className="py-5 px-6 text-xs font-bold uppercase tracking-widest text-muted-foreground">Description</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-border/50">
+              {props.map((row, idx) => (
+                <tr key={idx} className="hover:bg-primary/5 transition-colors group">
+                  <td className="py-5 px-6">
+                    <span className="font-mono text-sm text-primary font-bold">{row.prop}</span>
+                  </td>
+                  <td className="py-5 px-6">
+                    <code className="text-[11px] font-mono bg-black/40 px-2 py-1 rounded-lg border border-white/5 text-accent whitespace-nowrap">
+                      {row.type}
+                    </code>
+                  </td>
+                  <td className="py-5 px-6 text-xs font-mono text-muted-foreground">
+                    {row.default}
+                  </td>
+                  <td className="py-5 px-6 text-sm text-muted-foreground leading-relaxed">
+                    {row.description}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   )
