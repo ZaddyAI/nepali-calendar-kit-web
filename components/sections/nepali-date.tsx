@@ -28,7 +28,7 @@ export default function NepaliDateSection() {
                             icon: <CodeIcon className="w-4 h-4 text-accent" />
                         }
                     ].map((card) => (
-                        <div key={card.title} className="bg-card/40 backdrop-blur-xl border border-border rounded-3xl p-6 space-y-4">
+                        <div key={card.title} className="clean-card rounded-xl p-6 space-y-4">
                             <div className="flex items-center gap-3 font-bold text-foreground">
                                 {card.icon}
                                 {card.title}
@@ -41,7 +41,7 @@ export default function NepaliDateSection() {
                 </div>
 
                 <div className="space-y-6">
-                    <div className="bg-card/40 backdrop-blur-xl border border-border rounded-3xl p-8 h-full space-y-6">
+                    <div className="clean-card rounded-xl p-8 h-full space-y-6">
                         <div className="flex items-center gap-3 font-bold text-foreground">
                             <ZapIcon className="w-4 h-4 text-orange-400" />
                             Formatting Power

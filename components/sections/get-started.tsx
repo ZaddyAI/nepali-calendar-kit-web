@@ -35,7 +35,7 @@ export default function GettingStarted() {
                 >
                     <div className="group relative">
                         <div className="absolute -inset-1 bg-linear-to-r from-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                        <div className="relative bg-card/80 backdrop-blur-xl border border-border rounded-2xl p-6">
+                        <div className="relative clean-card rounded-xl p-6">
                             <div className="flex items-center justify-between mb-4">
                                 <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
                                     <PackageIcon className="w-4 h-4" />
@@ -72,7 +72,7 @@ export default function GettingStarted() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="bg-card/40 backdrop-blur-md border border-border rounded-2xl p-8 relative overflow-hidden"
+                    className="clean-card rounded-xl p-8 relative overflow-hidden"
                 >
                     <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
                         <CodeIcon className="w-32 h-32" />
