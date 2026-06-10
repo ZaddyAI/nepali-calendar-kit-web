@@ -16,7 +16,7 @@ export default function ExampleOutput() {
 
             <div className="grid lg:grid-cols-2 gap-8">
                 <div className="space-y-8">
-                    <div className="bg-card/40 backdrop-blur-xl border border-border rounded-[2rem] p-8 space-y-6">
+                    <div className="clean-card rounded-2xl p-8 space-y-6">
                         <div className="flex items-center gap-3 text-sm font-bold text-primary uppercase tracking-widest">
                             <CpuIcon className="w-4 h-4" />
                             Core Logic
@@ -44,7 +44,7 @@ export default function ExampleOutput() {
                     </div>
                 </div>
 
-                <div className="bg-card/40 backdrop-blur-xl border border-border rounded-[2rem] p-8 space-y-6">
+                <div className="clean-card rounded-2xl p-8 space-y-6">
                     <div className="flex items-center gap-3 text-sm font-bold text-accent uppercase tracking-widest">
                         <TerminalIcon className="w-4 h-4" />
                         Rich Result Object

@@ -15,7 +15,7 @@ export default function ThemeOptions() {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-8 items-start">
-        <div className="bg-card/40 backdrop-blur-xl border border-border rounded-[2rem] p-8 lg:p-10 space-y-6">
+        <div className="clean-card rounded-2xl p-8 lg:p-10 space-y-6">
           <div className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary mb-2">
             <Code2Icon className="w-4 h-4" />
             TypeScript Definition
@@ -24,11 +24,14 @@ export default function ThemeOptions() {
             <pre className="font-mono text-xs leading-relaxed text-blue-300">
               <code>{`interface Theme {
   primary?: string;       // Accent color (HEX/HSL)
-  primaryLight?: string;  // Hover/Active background
+  hoverBg?: string;       // Hover/Active background
+  surfaceBg?: string;     // Popover surface background
+  inputBg?: string;       // Input field background
+  text?: string;          // Text color
+  border?: string;        // Border color
   radius?: string;        // Border radius (e.g. '12px')
   fontFamily?: string;    // Custom font-stack
   shadow?: string;        // Box shadow definition
-  inputBg?: string;       // Field background
 }`}</code>
             </pre>
           </div>
@@ -42,6 +45,11 @@ export default function ThemeOptions() {
               example: "#6366f1"
             },
             { 
+              name: "hoverBg", 
+              desc: "Background color for hovered and active calendar cells.",
+              example: "#eef2ff"
+            },
+            { 
               name: "radius", 
               desc: "Controls the architectural feel. Use px for precision or rem for responsive scales.",
               example: "12px"
@@ -52,7 +60,7 @@ export default function ThemeOptions() {
               example: "'Inter', sans-serif"
             }
           ].map((item) => (
-            <div key={item.name} className="bg-card/40 backdrop-blur-xl border border-border rounded-2xl p-6 hover:border-primary/50 transition duration-300 group">
+            <div key={item.name} className="clean-card rounded-xl p-6 hover:border-primary/50 transition duration-300 group">
               <div className="flex justify-between items-start mb-2">
                 <span className="text-sm font-black font-mono text-primary group-hover:text-foreground transition-colors">{item.name}</span>
                 <span className="text-[10px] font-mono text-muted-foreground bg-white/5 px-2 py-0.5 rounded">{item.example}</span>

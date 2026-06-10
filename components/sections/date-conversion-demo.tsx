@@ -1,14 +1,20 @@
 "use client"
 import { adToBs, bsToAd } from "@gambhirpoudel/nepali-calendar-kit"
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRightLeftIcon, CalendarIcon, ChevronRightIcon, SparklesIcon } from "lucide-react"
 
 export default function DateConversionDemo() {
+    const today = useMemo(() => new Date(), [])
+    const todayAD = today.toISOString().split("T")[0]
+    const todayBS = useMemo(() => adToBs(today), [today])
+
     const [activeTab, setActiveTab] = useState<"ad-to-bs" | "bs-to-ad">("ad-to-bs")
-    const [adDate, setAdDate] = useState("2026-01-15")
+    const [adDate, setAdDate] = useState(todayAD)
     const [bsResult, setBsResult] = useState("")
-    const [bsInput, setBsInput] = useState("2082-10-01")
+    const [bsInput, setBsInput] = useState(
+        `${todayBS.year}-${String(todayBS.month).padStart(2, "0")}-${String(todayBS.day).padStart(2, "0")}`
+    )
     const [adResult, setAdResult] = useState("")
 
     const handleAdToBs = () => {
@@ -36,7 +42,7 @@ export default function DateConversionDemo() {
                 </p>
             </div>
 
-            <div className="bg-card/40 backdrop-blur-xl border border-border rounded-3xl overflow-hidden">
+            <div className="clean-card rounded-2xl overflow-hidden">
                 <div className="flex border-b border-border">
                     <button 
                         onClick={() => setActiveTab("ad-to-bs")}

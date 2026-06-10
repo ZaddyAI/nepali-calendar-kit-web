@@ -9,11 +9,12 @@ export default function PropsTable() {
       description: "Callback when a date is selected",
     },
     { prop: "theme", type: "Theme", default: "undefined", description: "Custom theming options" },
-    { prop: "value", type: "string", default: '""', description: "Initial date value" },
-    { prop: "dateLan", type: "LanguageCode", default: '"en"', description: "Language for date numbers" },
-    { prop: "monthLan", type: "LanguageCode", default: '"en"', description: "Language for month names" },
-    { prop: "dayLan", type: "LanguageCode", default: '"en"', description: "Language for day names" },
-    { prop: "yearLan", type: "LanguageCode", default: '"en"', description: "Language for year numbers" },
+    { prop: "value", type: "string", default: '""', description: "Initial date value (YYYY-MM-DD)" },
+    { prop: "format", type: "DateFormat", default: '"YYYY-MM-DD"', description: "Display and input format" },
+    { prop: "calLan", type: "LanguageCode", default: '"en"', description: "Language for all calendar labels" },
+    { prop: "placeholder", type: "string", default: "undefined", description: "Input placeholder text" },
+    { prop: "disabled", type: "boolean", default: "false", description: "Disable the date picker" },
+    { prop: "className", type: "string", default: "undefined", description: "Additional CSS class name" },
   ]
 
   return (
@@ -29,7 +30,7 @@ export default function PropsTable() {
         </p>
       </div>
 
-      <div className="bg-card/40 backdrop-blur-xl border border-border rounded-[2rem] overflow-hidden">
+      <div className="clean-card rounded-2xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>

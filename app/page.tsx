@@ -15,16 +15,13 @@ import { motion } from "framer-motion"
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-background text-foreground relative selection:bg-primary/30">
-            {/* Ambient Background Gradients */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[120px] mix-blend-screen opacity-50 animate-pulse" />
-                <div className="absolute bottom-[-10%] right-[-5%] w-[30%] h-[50%] rounded-full bg-chart-1/20 blur-[100px] mix-blend-screen opacity-40 animate-pulse" style={{ animationDelay: '2s' }} />
-            </div>
+        <div className="min-h-screen bg-background text-foreground relative selection:bg-primary selection:text-primary-foreground">
+            {/* Minimalist Grid Background */}
+            <div className="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-[0.15]" />
 
             <div className="relative z-10 flex flex-col min-h-screen">
                 <Header />
-                <main className="flex-1 w-full max-w-5xl mx-auto px-6 py-20 space-y-32">
+                <main className="flex-1 w-full max-w-5xl mx-auto px-6 py-24 space-y-32">
                     <Hero />
                     <motion.div 
                         initial={{ opacity: 0, y: 40 }}

@@ -1,11 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, Outfit, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
     title: "Nepali Calendar Kit | High-Performance Calendar SDK",
@@ -25,8 +26,8 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en" className="dark scroll-smooth">
-            <body className="antialiased selection:bg-primary selection:text-primary-foreground">
+        <html lang="en" className={`${inter.variable} ${outfit.variable} ${geistMono.variable} dark scroll-smooth`} suppressHydrationWarning>
+            <body className="antialiased selection:bg-primary/30 selection:text-primary">
                 {children}
                 <Analytics />
             </body>

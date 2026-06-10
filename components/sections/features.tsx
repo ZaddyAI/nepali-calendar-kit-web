@@ -63,7 +63,7 @@ export default function Features() {
                             key={idx}
                             variants={item}
                             whileHover={{ scale: 1.01, x: 10 }}
-                            className="flex gap-6 items-center p-6 bg-card/40 backdrop-blur-md border border-border/50 rounded-2xl hover:bg-card/80 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all cursor-default"
+                            className="flex gap-6 items-center p-6 clean-card rounded-xl hover:border-primary/30 transition-all cursor-default"
                         >
                             <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 text-primary">
                                 <feat.icon className="w-7 h-7" />

@@ -1,4 +1,4 @@
-import { GithubIcon, GlobeIcon, MailIcon, TwitterIcon } from "lucide-react"
+import { GlobeIcon, MailIcon, } from "lucide-react"
 
 export default function Footer() {
     return (
@@ -15,17 +15,7 @@ export default function Footer() {
                         <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
                             The definitive calendar toolkit for modern Nepali applications. Reliable, lightweight, and incredibly easy to integrate.
                         </p>
-                        <div className="flex gap-4">
-                            <a href="#" className="p-2 bg-white/5 hover:bg-primary/20 rounded-lg text-muted-foreground hover:text-primary transition-all">
-                                <GithubIcon className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-2 bg-white/5 hover:bg-accent/20 rounded-lg text-muted-foreground hover:text-accent transition-all">
-                                <TwitterIcon className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="p-2 bg-white/5 hover:bg-primary/20 rounded-lg text-muted-foreground hover:text-primary transition-all">
-                                <MailIcon className="w-5 h-5" />
-                            </a>
-                        </div>
+
                     </div>
 
                     <div className="space-y-6">
@@ -33,7 +23,6 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li><a href="https://www.npmjs.com/package/@gambhirpoudel/nepali-calendar-kit" className="text-sm text-muted-foreground hover:text-primary transition">NPM Registry</a></li>
                             <li><a href="https://github.com/ZaddyAI/nepali-calendar-kit" className="text-sm text-muted-foreground hover:text-primary transition">Source Code</a></li>
-                            <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition">Roadmap</a></li>
                         </ul>
                     </div>
 
@@ -42,7 +31,7 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li><a href="#nepali-date-picker" className="text-sm text-muted-foreground hover:text-primary transition">Date Picker</a></li>
                             <li><a href="#date-conversion" className="text-sm text-muted-foreground hover:text-primary transition">Conversion APIs</a></li>
-                            <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition">Documentation</a></li>
+                            <li><a href="https://github.com/ZaddyAI/nepali-calendar-kit/blob/main/README.md" className="text-sm text-muted-foreground hover:text-primary transition">Documentation</a></li>
                         </ul>
                     </div>
 
@@ -51,7 +40,7 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li><a href="https://github.com/ZaddyAI/nepali-calendar-kit/issues" className="text-sm text-muted-foreground hover:text-primary transition">GitHub Issues</a></li>
                             <li><a href="https://github.com/ZaddyAI/nepali-calendar-kit/discussions" className="text-sm text-muted-foreground hover:text-primary transition">Discussions</a></li>
-                            <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition">Contact Us</a></li>
+                            <li><a href="https://www.gambhirpoudel.com.np/" className="text-sm text-muted-foreground hover:text-primary transition">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,7 +54,7 @@ export default function Footer() {
                         <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition">Terms of Service</a>
                         <div className="flex items-center gap-2 text-xs text-muted-foreground">
                             <GlobeIcon className="w-3 h-3" />
-                            <span>v1.0.0-stable</span>
+                            <span>v2.0.0-stable</span>
                         </div>
                     </div>
                 </div>
