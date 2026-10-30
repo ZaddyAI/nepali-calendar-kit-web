@@ -1,4 +1,8 @@
-# Nepali Calendar Kit
+<p align="center">
+  <img src="./public/logo.svg" alt="Nepali Calendar Kit logo" width="96" height="96" />
+</p>
+
+<h1 align="center">Nepali Calendar Kit</h1>
 
 A lightweight React library for Nepali calendar operations, including **AD ↔ BS conversion**, date formatting, and a **Nepali Date Picker** component.
 
@@ -241,4 +245,8 @@ type FormatPart = "numeric" | "short" | "long";
 
 ## License
 
-MIT © [Gambhir Poudel](https://github.com/gambhirpoudel)
+MIT © [Gambhir Poudel](https://gambhirpoudel.com.np)
+
+---
+
+Developed by **[gambhirpoudel.com.np](https://gambhirpoudel.com.np)**

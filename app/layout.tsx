@@ -1,11 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Outfit, Geist_Mono } from "next/font/google"
+import { Oswald, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
+const oswald = Oswald({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-oswald" })
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
@@ -26,8 +26,16 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} ${outfit.variable} ${geistMono.variable} dark scroll-smooth`} suppressHydrationWarning>
-            <body className="antialiased selection:bg-primary/30 selection:text-primary">
+        <html lang="en" className={`${oswald.variable} ${jakarta.variable} ${geistMono.variable} scroll-smooth`} suppressHydrationWarning>
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+                />
+            </head>
+            <body className="antialiased selection:bg-primary/20 selection:text-primary">
                 {children}
                 <Analytics />
             </body>

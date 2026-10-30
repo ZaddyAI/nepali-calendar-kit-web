@@ -1,62 +1,98 @@
-import { GlobeIcon, MailIcon, } from "lucide-react"
+import MaterialIcon from "@/components/material-icon"
+import Logo from "@/components/logo"
+
+const COLUMNS = [
+    {
+        title: "Ecosystem",
+        links: [
+            { label: "React Calendar Component", href: "#nepali-date-picker" },
+            { label: "Nepali Tithi Engine", href: "#nepali-date" },
+            { label: "Devanagari Numerals", href: "#features" },
+            { label: "NPM Package Registry", href: "https://www.npmjs.com/package/@gambhirpoudel/nepali-calendar-kit" },
+        ],
+    },
+    {
+        title: "Documentation",
+        links: [
+            { label: "Quickstart Guide", href: "#getting-started" },
+            { label: "AD to BS Conversion", href: "#date-conversion" },
+            { label: "BS to AD Conversion", href: "#date-conversion" },
+            { label: "Component Props", href: "#api-reference" },
+        ],
+    },
+    {
+        title: "Community",
+        links: [
+            { label: "GitHub Repository", href: "https://github.com/ZaddyAI/nepali-calendar-kit" },
+            { label: "NPM Package Registry", href: "https://www.npmjs.com/package/@gambhirpoudel/nepali-calendar-kit" },
+            { label: "Contributing Guidelines", href: "https://github.com/ZaddyAI/nepali-calendar-kit/blob/main/README.md" },
+            { label: "Changelog & Releases", href: "https://github.com/ZaddyAI/nepali-calendar-kit/releases" },
+        ],
+    },
+]
 
 export default function Footer() {
     return (
-        <footer className="relative mt-32 border-t border-white/5 bg-black/20 backdrop-blur-md">
-            <div className="max-w-7xl mx-auto px-6 py-16">
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
-                    <div className="col-span-2 lg:col-span-2 space-y-6">
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-primary to-accent flex items-center justify-center text-white font-black text-xl shadow-lg shadow-primary/20">
-                                न
-                            </div>
-                            <span className="text-xl font-black tracking-tighter text-foreground">Nepali Calendar Kit</span>
+        <footer className="w-full bg-surface-container-lowest shadow-[0_-1px_12px_rgba(0,0,0,0.02)]">
+            <div className="page-container py-10">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10">
+                    <div className="flex flex-col gap-2 md:col-span-1">
+                        <div className="flex items-center gap-2">
+                            <Logo size={30} className="rounded-lg" />
+                            <span className="font-headline text-[20px] leading-7 font-bold text-on-surface">
+                                Nepali Calendar Kit
+                            </span>
                         </div>
-                        <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-                            The definitive calendar toolkit for modern Nepali applications. Reliable, lightweight, and incredibly easy to integrate.
+                        <p className="text-[13px] leading-5 text-on-surface-variant">
+                            Zero-dependency Bikram Sambat date conversion engine, panchang math, and festival UI kit
+                            crafted for the Nepali developer ecosystem.
                         </p>
-
+                        <div className="flex items-center gap-1 mt-1 flex-wrap">
+                            <span className="px-2 py-0.5 rounded-full bg-surface-container-high text-[11px] leading-[14px] font-bold text-on-surface-variant">
+                                MIT License
+                            </span>
+                            <span className="px-2 py-0.5 rounded-full bg-secondary-fixed text-[11px] leading-[14px] font-bold text-on-secondary-fixed">
+                                ESM &amp; CJS
+                            </span>
+                        </div>
                     </div>
 
-                    <div className="space-y-6">
-                        <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">Ecosystem</h4>
-                        <ul className="space-y-4">
-                            <li><a href="https://www.npmjs.com/package/@gambhirpoudel/nepali-calendar-kit" className="text-sm text-muted-foreground hover:text-primary transition">NPM Registry</a></li>
-                            <li><a href="https://github.com/ZaddyAI/nepali-calendar-kit" className="text-sm text-muted-foreground hover:text-primary transition">Source Code</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="space-y-6">
-                        <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">Resources</h4>
-                        <ul className="space-y-4">
-                            <li><a href="#nepali-date-picker" className="text-sm text-muted-foreground hover:text-primary transition">Date Picker</a></li>
-                            <li><a href="#date-conversion" className="text-sm text-muted-foreground hover:text-primary transition">Conversion APIs</a></li>
-                            <li><a href="https://github.com/ZaddyAI/nepali-calendar-kit/blob/main/README.md" className="text-sm text-muted-foreground hover:text-primary transition">Documentation</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="space-y-6">
-                        <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-foreground">Support</h4>
-                        <ul className="space-y-4">
-                            <li><a href="https://github.com/ZaddyAI/nepali-calendar-kit/issues" className="text-sm text-muted-foreground hover:text-primary transition">GitHub Issues</a></li>
-                            <li><a href="https://github.com/ZaddyAI/nepali-calendar-kit/discussions" className="text-sm text-muted-foreground hover:text-primary transition">Discussions</a></li>
-                            <li><a href="https://www.gambhirpoudel.com.np/" className="text-sm text-muted-foreground hover:text-primary transition">Contact Us</a></li>
-                        </ul>
-                    </div>
+                    {COLUMNS.map((col) => (
+                        <div key={col.title} className="flex flex-col gap-2">
+                            <span className="text-[11px] leading-[14px] font-bold uppercase text-outline tracking-[0.12em]">
+                                {col.title}
+                            </span>
+                            <ul className="flex flex-col gap-1">
+                                {col.links.map((link) => (
+                                    <li key={link.label}>
+                                        <a
+                                            href={link.href}
+                                            target={link.href.startsWith("http") ? "_blank" : undefined}
+                                            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                            className="text-[13px] leading-5 text-on-surface-variant hover:text-primary transition-colors"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
 
-                <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-xs text-muted-foreground">
-                        &copy; 2026 Nepali Calendar Kit. Crafted for the Nepali Developer ecosystem.
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-outline text-[13px] leading-5 border-t border-surface-container-high">
+                    <p>© 2026 Nepali Calendar Kit. Released under MIT License.</p>
+                    <p className="text-on-surface-variant">
+                        Developed by{" "}
+                        <a
+                            href="https://gambhirpoudel.com.np"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs leading-4 font-semibold text-primary hover:underline inline-flex items-center gap-1"
+                        >
+                            Gambhir Poudel
+                        </a>
                     </p>
-                    <div className="flex gap-8">
-                        <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition">Privacy Policy</a>
-                        <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition">Terms of Service</a>
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <GlobeIcon className="w-3 h-3" />
-                            <span>v2.0.0-stable</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </footer>
